@@ -27,7 +27,7 @@ class RegisterController extends Controller
             $user->country = $request->country;
             $user->save();
         } catch (\Exception $e) {
-            $data['errors'] = $e->getMessage();
+            $data['errors'] = [$e->getMessage()];
             return response()->json($data, 400);
         }
 
